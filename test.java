@@ -1,6 +1,6 @@
-import java.text.DateFormat.Field;
 
-public class test {
+
+public class Test {
         int num1 = 12;
         int num2 = 5;
         int result1 = num1/num2;
@@ -11,7 +11,7 @@ public class test {
         double result5 = (double)num1/num2;
         double result6 = (double)(num1/num2);
     public static void main(String[] args) throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException{
-        test t1 = new test();
+        Test t1 = new Test();
         
         //System.out.println(t1.result1);
         String text = "num1 = 12;\nnum2 = 5;\nresult1 = num1/num2;\nresult2 = num1/num2;\nresult3 = num1/num2 + 0.0;\nresult4 = num1/(num2 + 0.0);\nresult5 = (double)num1/num2;\nresult6 = (double)(num1/num2);\n";
@@ -21,7 +21,7 @@ public class test {
             String s = "result" + i;
             i++;
             // 通过字符串名字获取字段对象
-            java.lang.reflect.Field field = test.class.getDeclaredField(s);
+            java.lang.reflect.Field field = Test.class.getDeclaredField(s);
             // 设置字段为可访问
             field.setAccessible(true);
             // 获取字段的值并输出
